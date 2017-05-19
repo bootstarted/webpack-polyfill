@@ -1,0 +1,19 @@
+{
+  "name": "webpack-polyfill",
+  "author": "Izaak Schroeder <izaak.schroeder@gmail.com>",
+  "version": "0.1.0",
+  "description": "Give node the webpack API.",
+  "main": "index.js",
+  "license": "CC0-1.0",
+  "scripts": {
+    "smoke": "node ./test",
+    "test": "npm run smoke"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:metalabdesign/webpack-polyfill.git"
+  },
+  "dependencies": {
+    "klaw-sync": "^2.1.0"
+  }
+}

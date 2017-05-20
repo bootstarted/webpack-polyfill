@@ -23,7 +23,9 @@ var f = function(_, r, m, __filename, __dirname) {
         return './' + obj.path.substr(dir.length + 1);
       }); 
     };
-    var res = function(f) { return r(path.join(dir, f)); };
+    var res = function(f) { 
+      return r(path.join(dir, f)); 
+    };
     res.keys = keys;
     return res;
   };
@@ -35,5 +37,7 @@ var oldWrap = Module.wrap;
 var body = '(' + f.toString() + ')';
 
 Module.wrap = function webpackPolyfill(content) {
-  return body.replace(/__WRAPPED__/, oldWrap(content));
+  return body.replace(/__WRAPPED__/, function() {
+    return oldWrap(content);
+  });
 };
